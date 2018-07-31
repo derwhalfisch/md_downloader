@@ -7,7 +7,7 @@ in_options=""
 out_options="-filter aresample=44100 -acodec pcm_s16le"
 
   #path to your netmdcli binary
-netmdcli=/home/lyndon/projects/linux-minidisc-fixes/linux-minidisc/netmdcli/netmdcli
+netmdcli=../../projects/linux-minidisc-fixes/linux-minidisc/netmdcli/netmdcli
 
  #path to your temp file (/tmp/MDtemp.wav)
 temp=/tmp/MDtemp.wav
