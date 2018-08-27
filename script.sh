@@ -34,7 +34,7 @@ done
 echo "${#list[@]} files in list."
 echo -e "\n"
 
-  #get Artist and Album titles from first item on the list.
+  #get Artist and Album titles from first item on the list. mapfile to set both is fucky sometimes
 r_artist=$(ffprobe -v quiet -show_entries format_tags=artist -of default=nw=1:nk=1 "${list[0]}")
 r_album=$(ffprobe -v quiet -show_entries format_tags=album -of default=nw=1:nk=1 "${list[0]}")
 artist=$(echo "$r_artist" | tr -dc '[:print:]')
@@ -60,7 +60,6 @@ done
 $netmdcli settitle "$artist - $album"
 echo -e "\n"
 
-# this line is useless sometimes because of the mapfile issue
 echo "Completed $artist - ${album}"
 
 echo "Deleting temp file $temp"
